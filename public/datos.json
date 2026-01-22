@@ -3,20 +3,20 @@
     {
       "id": 1,
       "titulo": "Introducción a React",
-      "contenido": "React es una biblioteca de JavaScript para construir interfaces de usuario. Te permite crear interfaces complejas a partir de piezas pequeñas y aisladas llamadas 'componentes'.",
-      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+      "contenido": "React utiliza un Virtual DOM para mejorar el rendimiento. En lugar de actualizar todo el navegador cada vez que algo cambia, React calcula la diferencia en memoria y actualiza solo lo necesario. Esta imagen muestra el logo oficial de la tecnología en el repositorio de GitHub.",
+      "imagen": "https://raw.githubusercontent.com/github/explore/main/topics/react/react.png"
     },
     {
       "id": 2,
       "titulo": "Componentes",
-      "contenido": "Los componentes son las piezas básicas de una interfaz en React. Un componente es una función de JavaScript que devuelve marcado (JSX).",
-      "imagen": "https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png"
+      "contenido": "Los componentes son el corazón de React. Permiten dividir la interfaz de usuario (UI) en piezas independientes, reutilizables y aisladas. Conceptualmente, un componente es como una función de JavaScript: recibe entradas arbitrarias llamadas 'props' y devuelve elementos de React (JSX) que describen lo que se debe mostrar en la pantalla. Esto permite construir UIs complejas combinando componentes simples.",
+      "imagen": "https://trbl-services.eu/wp-content/uploads/2019/02/react-7.png"
     },
     {
       "id": 3,
-      "titulo": "Hooks Básicos",
-      "contenido": "Los Hooks son funciones que te permiten 'engancharte' al estado de React y al ciclo de vida desde componentes funcionales. useState y useEffect son los más comunes.",
-      "imagen": ""
+      "titulo": "Programación con Hooks",
+      "contenido": "Los Hooks nos permiten usar funcionalidades de React dentro de un editor de código sin escribir clases. En esta imagen vemos un entorno de desarrollo típico donde se escribe la lógica de funciones como useState o useEffect.",
+      "imagen": "https://cloudappi-web.s3.eu-west-1.amazonaws.com/wp-content/uploads/2022/07/04115940/ejemplo-patrones-de-diseno.png"
     }
   ]
 }
