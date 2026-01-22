@@ -1,19 +1,157 @@
+/* Definición de variables de color (Tema Oscuro tipo React.dev) */
+:root {
+  --bg-dark: #23272f;       /* Fondo principal */
+  --bg-sidebar: #191b21;    /* Fondo barra lateral */
+  --text-primary: #f6f7f9;  /* Texto blanco */
+  --text-secondary: #99a1b3;/* Texto gris */
+  --accent: #149eca;        /* Azul React */
+  --highlight: #2c303b;     /* Color al pasar el mouse */
+}
 
-.app{
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+/* Barra superior (Header) */
+.top-bar {
+  background-color: var(--bg-sidebar);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #343a46;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor principal (Sidebar + Contenido) */
+.main-layout {
+  display: flex;
+  flex: 1; /* Ocupa el espacio restante */
+  overflow: hidden; /* Evita que se desborde la página entera */
+}
+
+/* --- ESTILOS DEL MENÚ LATERAL (MenuLateral.jsx) --- */
+.barra-lateral {
+  width: 280px;
+  background-color: var(--bg-sidebar);
+  padding: 1.5rem;
+  border-right: 1px solid #343a46;
+  overflow-y: auto; /* Scroll solo en la barra si es muy larga */
+}
+
+.barra-lateral h3 {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.barra-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.barra-lateral button {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.barra-lateral button:hover {
+  background-color: var(--highlight);
+}
+
+/* Clase para el botón seleccionado */
+.barra-lateral button.active {
+  background-color: rgba(20, 158, 202, 0.15); /* Azul transparente */
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- ESTILOS DEL CUERPO (Cuerpo.jsx) --- */
+.area-contenido {
+  flex: 1;
+  padding: 3rem 4rem;
+  overflow-y: auto; /* Scroll independiente para el contenido */
+  max-width: 800px; /* Ancho máximo para leer cómodamente */
+}
+
+.area-contenido h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.descripcion {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+/* Imágenes */
+.imagen-container {
+  background: #fff; /* Fondo blanco para que resalten las imágenes */
+  padding: 1rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.imagen {
+  max-width: 50vh;
+  height: 50vh;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Mensajes de carga, error y estado vacío */
+.carga, .error, .vacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+/* --- RESPONSIVE (Móviles) --- */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column; /* Pone el menú arriba y el contenido abajo */
+  }
   
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #343a46;
+    padding: 1rem;
   }
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .area-contenido {
+    padding: 1.5rem;
   }
 }

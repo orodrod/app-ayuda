@@ -1,13 +1,24 @@
 import React from 'react';
 
-const MenuLateral = () => {
+const MenuLateral = ({secciones, seleccionado, idActivo}) => {
 
     return (
-        <div className='contenedor-principal'>
-            <Grid seleccionar = {agregarProducto}/>
-            <PanelPedido seleccionados = {pedido} finalizar = {finalizarVenta} agregar = {agregarUno} quitar = {quitarUno}/>
-        </div>
-    )
+        <nav className="barra-lateral">
+            <h3>Documentación</h3>
+            <ul>
+                {secciones.map((seccion) => (
+                    <li key={seccion.id}>
+                        <button
+                        className={idActivo === seccion.id ? 'active' : ''}
+                        onClick={() => seleccionado(seccion)}
+                        >
+                        {seccion.titulo}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+  );
 };
 
 export default MenuLateral;
