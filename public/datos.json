@@ -4,19 +4,19 @@
       "id": 1,
       "titulo": "Introducción a React",
       "contenido": "React utiliza un Virtual DOM para mejorar el rendimiento. En lugar de actualizar todo el navegador cada vez que algo cambia, React calcula la diferencia en memoria y actualiza solo lo necesario. Esta imagen muestra el logo oficial de la tecnología en el repositorio de GitHub.",
-      "imagen": "https://raw.githubusercontent.com/github/explore/main/topics/react/react.png"
+      "imagen": "./img/react.png"
     },
     {
       "id": 2,
       "titulo": "Componentes",
       "contenido": "Los componentes son el corazón de React. Permiten dividir la interfaz de usuario (UI) en piezas independientes, reutilizables y aisladas. Conceptualmente, un componente es como una función de JavaScript: recibe entradas arbitrarias llamadas 'props' y devuelve elementos de React (JSX) que describen lo que se debe mostrar en la pantalla. Esto permite construir UIs complejas combinando componentes simples.",
-      "imagen": "https://trbl-services.eu/wp-content/uploads/2019/02/react-7.png"
+      "imagen": "./img/react-component.png"
     },
     {
       "id": 3,
       "titulo": "Programación con Hooks",
       "contenido": "Los Hooks nos permiten usar funcionalidades de React dentro de un editor de código sin escribir clases. En esta imagen vemos un entorno de desarrollo típico donde se escribe la lógica de funciones como useState o useEffect.",
-      "imagen": "https://cloudappi-web.s3.eu-west-1.amazonaws.com/wp-content/uploads/2022/07/04115940/ejemplo-patrones-de-diseno.png"
+      "imagen": "./img/react-hook.png"
     }
   ]
 }
