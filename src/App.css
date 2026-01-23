@@ -1,4 +1,4 @@
-/* Definición de variables de color (Tema Oscuro tipo React.dev) */
+/* Definición de variables de color  */
 :root {
   --bg-dark: #23272f;       /* Fondo principal */
   --bg-sidebar: #191b21;    /* Fondo barra lateral */
@@ -40,7 +40,7 @@ body {
   overflow: hidden; /* Evita que se desborde la página entera */
 }
 
-/* --- ESTILOS DEL MENÚ LATERAL (MenuLateral.jsx) --- */
+/* --- ESTILOS DEL MENÚ LATERAL  --- */
 .barra-lateral {
   width: 280px;
   background-color: var(--bg-sidebar);
@@ -86,11 +86,10 @@ body {
   font-weight: 600;
 }
 
-/* --- ESTILOS DEL CUERPO (Cuerpo.jsx) --- */
+/* --- ESTILOS DEL CUERPO  --- */
 .area-contenido {
-  
   flex: 1;
-  padding: 5rem 4rem 0rem 23rem;
+  padding: 5rem 4rem 0rem 10rem;
   overflow-y: auto; /* Scroll independiente para el contenido */
   max-width: 800px; /* Ancho máximo para leer cómodamente */
 }
@@ -124,6 +123,10 @@ body {
   display: block;
 }
 
+.logo-app{
+  max-width: 50px;
+}
+
 /* Mensajes de carga, error y estado vacío */
 .carga, .error, .vacio {
   display: flex;
@@ -138,7 +141,7 @@ body {
   color: #ff4d4d;
 }
 
-/* --- RESPONSIVE (Móviles) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column; /* Pone el menú arriba y el contenido abajo */

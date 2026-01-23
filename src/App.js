@@ -5,12 +5,13 @@ import Cuerpo from './componentes/Cuerpo';
 import './App.css'; 
 
 function App() {
-  const [secciones, setSecciones] = useState([]);
-  const [seleccionado, setSeleccionado] = useState(null);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState(null);
+  const [secciones, setSecciones] = useState([]); /*Guarda todas las secciones. */
+  const [seleccionado, setSeleccionado] = useState(null); /*La sección actual. */
+  const [cargando, setCargando] = useState(true);  /*Estado de carga. */
+  const [error, setError] = useState(null); /*Nos dice si hay error. */
 
-  // Requisito 3: Carga de datos con fetch
+  
+  /*Llamada al archivo json que guarda la info. */
   useEffect(() => {
     fetch('/datos.json')
       .then((respuesta) => {
@@ -21,37 +22,38 @@ function App() {
       })
       .then((datos) => {
         setSecciones(datos.secciones);
-        // Opcional: Seleccionar el primero por defecto
+        
+        /*Si el archivo tiene mas de una seccion la primera se muestra por defecto al inicio */
         if (datos.secciones.length > 0) {
           setSeleccionado(datos.secciones[0]);
         }
-        setCargando(false);
+        setCargando(false); /*Cambiamos el estado de carga */
       })
       .catch((err) => {
         console.error(err);
-        setError('No se pudo cargar la ayuda. Intente más tarde.');
+        setError('No se pudo cargar la ayuda. Intente más tarde.'); /*Cargará este error al estado. */
         setCargando(false);
       });
   }, []);
 
+  /*Si esta cargando mostrará cargando si hay error mostrará el error, estos mensajes no saldrán salvo que haya un fallo o en la carga entre inforación, pero solo será apreciable si tarda mucho en cargar. */
   if (cargando) return <div className="carga">Cargando documentación...</div>;
   if (error) return <div className="error">{error}</div>;
 
+  /*Pintamos la composición */
   return (
     <div className="app-container">
-      {/* Header simple tipo React.dev */}
+      
       <header className="top-bar">
-        <span className="logo">⚛️ Ayuda React</span>
+        <img className='logo-app' src='/logo192.png'/><span className="logo"> Ayuda React</span>
       </header>
 
       <div className="main-layout">
-        {/* Requisito 4: Componentes Reutilizables */}
         <MenuLateral 
           secciones={secciones} 
           seleccionado={setSeleccionado} 
           idActivo={seleccionado?.id}
         />
-
         <Cuerpo datos={seleccionado} />
       </div>
     </div>
